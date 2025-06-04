@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic Page Setup -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Government Scheme Portal</title>
+
+    <!-- Link to External CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- AOS (Animate On Scroll) Library -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init(); // Initialize AOS animations
+    </script>
+  </head>
+
+  <body>
+    <!-- Hamburger Menu Toggle (for responsive nav) -->
+    <button id="menu-toggle" class="menu-toggle">&#9776;</button>
+
+    <!-- Header Section -->
+    <header>
+      <div class="container">
+        <!-- Logo -->
+        <div class="logo">
+          <img src="logo.png" class="logo-img" />
+        </div>
+
+        <!-- Navigation Bar -->
+        <nav>
+          <ul class="nav-left">
+            <li><a href="#" onclick="scrollToTop()">Home</a></li>
+            <li><a href="#popular-schemes">Schemes</a></li>
+            <li><a href="#" onclick="openAboutModal()">About</a></li>
+            <li><a href="#" onclick="openContactModal()">Contact</a></li>
+          </ul>
+          
+
+            <!-- Language Toggle and Login/Signup -->
+            <div class="nav-right">
+              <button
+                id="language-toggle-btn"
+                onclick="toggleLanguage()"
+                class="lang-btn"
+                data-lang="toggle-lang"
+              >
+                Hindi
+              </button>
+              <a
+                href="login.html"
+                class="login-signup-link"
+                data-lang="login-signup"
+                >Login/Sign Up</a
+              >
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Banner Section -->
+    <section
+      id="hero"
+      style="background-image: url('BG.jpg')"
+      data-aos="fade-down"
+      data-aos-duration="1000"
+    >
+      <div class="hero-content" data-aos="fade-up" data-aos-delay="300">
+        <h1 data-lang="hero-heading">
+          Find the Goverment Schemes That Empower You
+        </h1>
+
+        <!-- Search Form -->
+        <form id="search-form" data-aos="zoom-in" data-aos-delay="500">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search for Schemes.."
+          />
+          <button type="submit" data-lang="explore-schemes">
+            Explore Schemes
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Filter Dropdown -->
+    <div class="filter-container">
+      <label for="categoryFilter">Filter by Category</label>
+      <select id="categoryFilter">
+        <option value="all">All</option>
+        <option value="health">Health</option>
+        <option value="education">Education</option>
+        <option value="finance">Finance</option>
+      </select>
+    </div>
+
+    <!-- Popular Schemes Section -->
+    <section id="popular-schemes" data-aos="fade-up" data-aos-duration="1000">
+      <h2 data-lang="popular-schemes-heading">Schemes</h2>
+
+      <!-- Carousel Buttons & Dynamic Scheme Cards -->
+      <div class="carousel-container">
+        <button class="carousel-btn prev">&#10094;</button>
+
+        <!-- Cards will be dynamically added here -->
+        <div id="schemesContainer" class="carousel"></div>
+
+        <button class="carousel-btn next">&#10095;</button>
+      </div>
+    </section>
+
+    <!-- About Modal -->
+<div id="aboutModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeAboutModal()">&times;</span>
+    <h2>About the Government Scheme Portal</h2>
+    <p>
+      This portal helps users discover and apply for government schemes with ease. Our goal is to connect citizens with the welfare programs designed for their benefit.
+    </p>
+  </div>
+</div>
+
+<!-- Contact Modal -->
+<div id="contactModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeContactModal()">&times;</span>
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</div>
+
+    <!-- Footer Section -->
+    <footer data-aos="fade-up" data-aos-duration="800">
+      <div class="footer-content" data-aos="zoom-in" data-aos-delay="300">
+        <div class="logo"></div>
+        <!-- Footer Links -->
+        <ul>
+          <li><a href="#privacy" data-lang="privacy">Privacy</a></li>
+          <li><a href="#terms" data-lang="terms">Terms</a></li>
+        </ul>
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+          <a href="#" data-lang="instagram">Instagram</a>
+          <a href="#" data-lang="twitter">Twitter</a>
+          <a href="#" data-lang="linkedin">LinkedIn</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="language.js"></script>
+    <!-- Language toggle logic -->
+    <script src="carousel.js"></script>
+    <!-- Carousel behavior -->
+    <script src="cardHover.js"></script>
+    <!-- Card hover animation -->
+    <script src="navbar.js"></script>
+    <!-- Navbar toggle (mobile) -->
+    <script src="scrollbehaviour.js"></script>
+    <!-- Scroll-related features -->
+    <script src="schemes.js"></script>
+    <!-- Fetch/display schemes -->
+    <script src="script.js"></script>
+    <!-- Miscellaneous logic -->
+    <script src="api.js"></script>
+    <!-- API integration for schemes -->
+    <script src="formValidation.js"></script>
+    <!-- Form input validation -->
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" title="Go to top">↑</button>
+  </body>
+</html>

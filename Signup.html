@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta settings for proper rendering and encoding -->
+    <meta charset="UTF-8" />
+    <title>Sign Up | GSP</title> <!-- Fixed typo: "Sigh Up" to "Sign Up" -->
+
+    <!-- Link to shared Login/Signup styling CSS -->
+    <link rel="stylesheet" href="LSS.css" />
+  </head>
+
+  <body>
+    <!-- Left visual panel for SignUp-specific background/design -->
+    <div class="split-left split-left-Signup"></div>
+
+    <!-- Right side: form container -->
+    <div class="split-right">
+      <div class="form-container">
+        <!-- Heading with translation key for language switching -->
+        <h2 data-lang="signup-create-account">Create an Account</h2>
+
+        <!-- Signup form -->
+        <form id="signupForm"> <!-- Fixed typo in ID from "signForm" to "signupForm" -->
+          <!-- Full name input field -->
+          <input
+            type="text"
+            placeholder="Fullname"
+            required
+            data-lang="fullname"
+          />
+
+          <!-- Email input field -->
+          <input
+            type="email"
+            placeholder="Email"
+            required
+            data-lang="email"
+          />
+
+          <!-- Password input field -->
+          <input
+            type="password"
+            placeholder="Password"
+            required
+            data-lang="password"
+          />
+
+          <!-- Phone number input field -->
+          <input
+            type="text"
+            placeholder="Phone Number"
+            required
+            data-lang="phone"
+          />
+
+          <!-- Signup button -->
+          <button type="submit" data-lang="signup-button">Sign Up</button> <!-- Fixed "Sigh Up" -->
+        </form>
+
+        <!-- Login link for existing users -->
+        <p data-lang="login-question">
+          Already have an account?
+          <a href="login.html" data-lang="login-link">Log In</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- JavaScript: Handles form submission -->
+    <script>
+      document.getElementById("signupForm").onsubmit = function (e) {
+        e.preventDefault(); // Prevent default form submission
+        alert("Signup Successful"); // Notify user
+        window.location.href = "index.html"; // Redirect to home page
+      };
+    </script>
+
+    <!-- Optional external JS for validation -->
+    <script src="formValidation.js"></script>
+  </body>
+</html>
